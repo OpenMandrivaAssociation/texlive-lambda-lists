@@ -5,8 +5,8 @@
 # catalog-license lppl
 # catalog-version undef
 Name:		texlive-lambda-lists
-Version:	20130809
-Release:	9
+Version:	20170414
+Release:	1
 Summary:	Lists in TeX's mouth
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/generic/lambda-lists
