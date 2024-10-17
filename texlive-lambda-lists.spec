@@ -3,7 +3,7 @@ Version:	31402
 Release:	2
 Summary:	Lists in TeX's mouth
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/generic/lambda-lists
+URL:		https://www.ctan.org/tex-archive/macros/generic/lambda-lists
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lambda-lists.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lambda-lists.doc.r%{version}.tar.xz
