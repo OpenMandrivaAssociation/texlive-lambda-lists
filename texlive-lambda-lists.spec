@@ -1,44 +1,21 @@
-Name:		texlive-lambda-lists
-Version:	31402
-Release:	2
-Summary:	Lists in TeX's mouth
+%global tl_name lambda-lists
+%global tl_revision 79618
+
+Name:		texlive-%{tl_name}
+Version:	%{tl_revision}
+Release:	1
+Summary:	Lists in TeXs mouth
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/generic/lambda-lists
-License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lambda-lists.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lambda-lists.doc.r%{version}.tar.xz
+License:	lppl1.3
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/lambda-lists.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/lambda-lists.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-These list-processing macros avoid the reassignments employed
-in the macros shown in Appendix D of the TeXbook: all the
-manipulations take place in what Knuth is pleased to call
-"TeX's mouth".
+These list-processing macros avoid the reassignments employed in the
+macros shown in Appendix D of the TeXbook: all the manipulations take
+place in what Knuth is pleased to call "TeX's mouth".
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/plain/lambda-lists/lambda.sty
-%doc %{_texmfdistdir}/doc/plain/lambda-lists/README
-%doc %{_texmfdistdir}/doc/plain/lambda-lists/lambda-lists.pdf
-%doc %{_texmfdistdir}/doc/plain/lambda-lists/lambda-lists.tex
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc %{buildroot}%{_texmfdistdir}
